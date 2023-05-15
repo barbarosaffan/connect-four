@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { Player } from "./player"; // Make sure the import path matches your project structure
+import { Player } from "./player";
 
 class Game {
   board: (string | null)[][];
