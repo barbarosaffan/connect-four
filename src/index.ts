@@ -89,7 +89,7 @@ async function addToken(): Promise<void> {
   printBoard();
   const gameStatus = checkGame();
   if (gameStatus !== 0) {
-    console.log(`Oyunu kazanan: ${gameStatus}`);
+    console.log(`Winner is: ${gameStatus}`);
     return;
   }
   turnPlayer = turnPlayer === 1 ? 2 : 1;
@@ -98,12 +98,12 @@ async function addToken(): Promise<void> {
 
 async function playLoop(): Promise<void> {
   if (turnPlayer === 1) {
-    console.log('Ana menü için 0 yazabilirsin.');
-    console.log('1. Oyuncu: Hangi sütuna yerleştirmek istiyorsun?');
+    console.log('Press 0 for main menu.');
+    console.log('1st Player: Which column do you want to place?');
     return addToken();
   } else if (turnPlayer === 2) {
-    console.log('Ana menü için 0 yazabilirsin.');
-    console.log('2. Oyuncu: Hangi sütuna yerleştirmek istiyorsun?');
+    console.log('Press 0 for main menu.');
+    console.log('2nd Player: Which column do you want to place?');
     return addToken();
   }
 }
@@ -118,7 +118,7 @@ function saveBoard() {
   }
   data += turnPlayer + '\n';
   fs.writeFileSync('game_data.txt', data);
-  console.log('Oyun kaydedildi.');
+  console.log('Game saved.');
 }
 
 function loadBoard() {
@@ -135,10 +135,10 @@ function loadBoard() {
 }
 
 async function gameMenu(): Promise<void> {
-  console.log('1-Oyuna Başla');
-  console.log('2-Oyunu Kaydet');
-  console.log('3-Oyunu Yükle');
-  console.log('4-Oyundan Çık');
+  console.log('1: Start');
+  console.log('2: Save Game');
+  console.log('3: Load Game');
+  console.log('4: Exit');
 
   const gameChoice = await new Promise<number>(resolve => {
     rl.question('', (answer: string) => {
