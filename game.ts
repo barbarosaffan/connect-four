@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import { Player } from "./player";
 
-class Game {
+export class Game {
   board: (string | null)[][];
   players: Player[];
   currentPlayerIndex: number;
