@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/barbarosaffan/connect-four#readme",
   "dependencies": {},
+  "type": "module",
   "devDependencies": {
     "@types/node": "^20.1.4"
   }
