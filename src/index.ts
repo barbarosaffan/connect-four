@@ -12,7 +12,8 @@ const rl = readline.createInterface({
 function logFile(column: number): void {
   fs.appendFileSync(
     'log.txt',
-    `${turnPlayer}. Oyuncu ${column} sütununa yerleştirdi.\n`
+    // `${turnPlayer}. Oyuncu ${column} sütununa yerleştirdi.\n`
+    `Player ${turnPlayer} placed move to column ${column}.\n`
   );
 }
 
