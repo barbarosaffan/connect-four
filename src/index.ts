@@ -90,6 +90,7 @@ async function addToken(): Promise<void> {
   const gameStatus = checkGame();
   if (gameStatus !== 0) {
     console.log(`Winner is: ${gameStatus}`);
+    logFile(gameStatus);
     return;
   }
   turnPlayer = turnPlayer === 1 ? 2 : 1;
@@ -131,7 +132,7 @@ function loadBoard() {
     }
   }
   turnPlayer = parseInt(lines[10]);
-  console.log('Oyun yüklendi.');
+  console.log('Loaded game.');
 }
 
 async function gameMenu(): Promise<void> {
